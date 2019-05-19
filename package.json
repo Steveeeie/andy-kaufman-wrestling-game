@@ -18,7 +18,7 @@
     "webpack-cli": "^3.3.2"
   },
   "scripts": {
-    "build": "webpack && cp public/index.html dist/index.html && cp public/favicon.ico dist/favicon.ico",
+    "build": "webpack && cp public/index.html build/index.html && cp public/favicon.ico build/favicon.ico",
     "deploy": "gh-pages -d build",
     "predeploy": "yarn build && cp build/index.html build/404.html"
   },
