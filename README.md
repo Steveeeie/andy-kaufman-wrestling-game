@@ -12,6 +12,8 @@ Originally created on 16th May, 2019 and released on CodePen in memory of Andy K
 
 <img src="https://github.com/Steveeeie/andy-kaufman-wrestling-game/blob/master/README-andy.png?raw=true" alt="Andy Kaufman" width="320px" />
 
+[Andy Kaufman - Wikipedia](https://en.wikipedia.org/wiki/Andy_Kaufman)
+
 This game allows you to control Andy "I'm from Hollywood" Kaufman during his infamous wrestling match on 5th April 1982 in Memphis, Tennessee as he attempts to defeat his first male opponent, the southern heavyweight champion Jerry "The King" Lawler.
 
 <img src="https://github.com/Steveeeie/andy-kaufman-wrestling-game/blob/master/README-gif.gif?raw=true" alt="Andy Kaufman" width="640px" />
