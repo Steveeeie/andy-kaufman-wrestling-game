@@ -1,0 +1,34 @@
+@keyframes Guest {
+  0% {
+    transform: rotateZ(0deg) translate3d(100%, 100%, 1200px);
+  }
+  30% {
+    transform: rotateZ(-30deg) translate3d(0, 0, 1200px);
+  }
+  70% {
+    transform: rotateZ(-30deg) translate3d(0, 0, 1200px);
+  }
+  100% {
+    transform: rotateZ(0deg) translate3d(100%, 100%, 1200px);
+  }
+}
+
+.guest {
+  background-image: url('../textures/tony.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: fixed;
+  bottom: -40px;
+  right: -40px;
+  height: 240px;
+  width: 240px;
+  transform: rotateZ(0deg) translate3d(100%, 100%, 1200px);
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
+  z-index: 3;
+}
+
+.guest--shown {
+  animation: Guest 6s linear;
+}

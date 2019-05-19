@@ -1,0 +1,13 @@
+@keyframes blink {
+  0% {
+    color: rgba(255, 255, 255, 1);
+  }
+  100% {
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.blink {
+  animation: blink 1s alternate infinite;
+  display: inline;
+}

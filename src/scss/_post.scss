@@ -1,0 +1,48 @@
+$ring-edge: $floor-size / 2 + $post-size / 2;
+
+.post {
+  @include box(
+    $pivot-position-z: 'bottom',
+    $depth: $post-depth,
+    $height: $post-size,
+    $width: $post-size
+  );
+}
+
+[class*='post--top'] {
+  [class^='face'] {
+    background: #451b1b linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  .face--top {
+    background: #642626;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  }
+}
+
+[class*='post--bottom'] {
+  [class^='face'] {
+    background: #132433 linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+  }
+
+  .face--top {
+    background: #1c3348;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.post--top-left {
+  transform: translate3d($ring-edge, -$ring-edge, -$floor-depth);
+}
+
+.post--top-right {
+  transform: translate3d(-$ring-edge, -$ring-edge, -$floor-depth);
+}
+
+.post--bottom-left {
+  transform: translate3d($ring-edge, $ring-edge, -$floor-depth);
+}
+
+.post--bottom-right {
+  transform: translate3d(-$ring-edge, $ring-edge, -$floor-depth);
+}

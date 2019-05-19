@@ -1,0 +1,245 @@
+@keyframes andyArmLeftWalk {
+  0% {
+    transform: translateX(-20px) translateZ(48px) rotateX(20deg) rotateY(10deg);
+  }
+  50% {
+    transform: translateX(-20px) translateZ(48px) rotateX(-20deg) rotateY(10deg);
+  }
+  100% {
+    transform: translateX(-20px) translateZ(48px) rotateX(20deg) rotateY(10deg);
+  }
+}
+
+@keyframes andyArmRightWalk {
+  0% {
+    transform: translateX(20px) translateZ(48px) rotateX(-20deg) rotateY(-10deg);
+  }
+  50% {
+    transform: translateX(20px) translateZ(48px) rotateX(20deg) rotateY(-10deg);
+  }
+  100% {
+    transform: translateX(20px) translateZ(48px) rotateX(-20deg) rotateY(-10deg);
+  }
+}
+
+@keyframes andyLegLeftWalk {
+  0% {
+    transform: translateX(-8px) rotateX(-30deg);
+  }
+  50% {
+    transform: translateX(-8px) rotateX(30deg);
+  }
+  100% {
+    transform: translateX(-8px) rotateX(-30deg);
+  }
+}
+
+@keyframes andyLegRightWalk {
+  0% {
+    transform: translateX(8px) rotateX(30deg);
+  }
+  50% {
+    transform: translateX(8px) rotateX(-30deg);
+  }
+  100% {
+    transform: translateX(8px) rotateX(30deg);
+  }
+}
+
+@keyframes AndySuplexArmRight {
+  0% {
+    transform: translateX(20px) translateZ(48px) rotateZ(-10deg) rotateY(-90deg);
+  }
+  40% {
+    transform: translateX(20px) translateZ(48px) rotateZ(-10deg) rotateY(-90deg);
+  }
+  60% {
+    transform: translateX(20px) translateZ(48px) rotateZ(-10deg) rotateY(-10deg);
+  }
+  100% {
+    transform: translateX(20px) translateZ(48px) rotateZ(-10deg) rotateY(-10deg);
+  }
+}
+
+@keyframes AndySuplexUpperBody {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(90deg);
+  }
+}
+
+@keyframes AndySuplex {
+  0% {
+    transform: translateZ($floor-depth / 2) translateX(-30px) translateY(-40px) rotateX(0deg);
+  }
+  40% {
+    transform: translateZ($floor-depth / 2) translateX(-30px) translateY(-40px) rotateX(0deg);
+  }
+  50% {
+    transform: translateZ($floor-depth / 2 + 100px) translateX(-30px) translateY(50px)
+      rotateX(-120deg);
+  }
+  70% {
+    transform: translateZ($floor-depth / 2 + 20px) translateX(-30px) translateY(100px)
+      rotateX(-180deg);
+  }
+  100% {
+    transform: translateZ($floor-depth / 2 - 48px) translateX(-30px) translateY(100px)
+      rotateX(-180deg);
+  }
+}
+
+@keyframes AndyPile {
+  0% {
+    transform: translateZ(140px) translateY(-30px) rotateX(180deg) rotateZ(-180deg);
+  }
+  50% {
+    transform: translateZ(190px) translateY(-30px) rotateX(180deg) rotateZ(-180deg);
+  }
+  80% {
+    transform: translateZ(100px) translateY(-30px) rotateX(180deg) rotateZ(-180deg);
+  }
+  100% {
+    transform: translateZ(105px) translateY(-30px) rotateX(180deg) rotateZ(-180deg);
+  }
+}
+
+.andy {
+  @include pivot;
+  transform: translateZ($floor-depth / 2);
+}
+
+.andy__upper-body {
+  @include pivot;
+}
+
+.andy__head {
+  @include box(
+    $pivot-position-z: 'bottom',
+    $depth: 28px,
+    $height: 28px,
+    $width: 28px,
+    $texture: 'andy-kaufman.gif',
+    $texture-position-top: -28px 0,
+    $texture-position-front: 0 0,
+    $texture-position-back: -28px -28px,
+    $texture-position-left: 0 -28px,
+    $texture-position-right: -56px -28px
+  );
+  transform: translateZ(54px);
+  transition: transform 200ms linear;
+}
+
+.andy__body {
+  @include box(
+    $pivot-position-z: 'top',
+    $depth: 48px,
+    $height: 24px,
+    $width: 32px,
+    $texture: 'andy-kaufman.gif',
+    $texture-position-default: -32px -56px,
+    $texture-position-back: 0 -56px
+  );
+  transform: translateZ(52px);
+  transition: transform 200ms linear;
+}
+
+.andy__leg {
+  @include box(
+    $pivot-position-z: 'top',
+    $depth: 52px,
+    $height: 16px,
+    $width: 16px,
+    $texture: 'andy-kaufman.gif',
+    $texture-position-default: -80px -56px,
+    $texture-position-top: -0 -93px,
+    $texture-position-bottom: -56px -12px,
+    $texture-position-back: -64px -56px
+  );
+
+  transition: transform 200ms linear;
+}
+
+.andy__arm {
+  @include box(
+    $pivot-position-z: 'top',
+    $depth: 52px,
+    $height: 12px,
+    $width: 12px,
+    $texture: 'andy-kaufman.gif',
+    $texture-position-default: -84px -4px,
+    $texture-position-top: -72px -16px,
+    $texture-position-bottom: -72px -4px
+  );
+
+  transition: transform 200ms linear;
+}
+
+.andy__arm--left {
+  transform: translateX(-20px) translateZ(48px) rotateY(10deg);
+}
+
+.andy__arm--right {
+  transform: translateX(20px) translateZ(48px) rotateY(-10deg);
+}
+
+.andy__leg--left {
+  transform: translateX(-8px);
+}
+
+.andy__leg--right {
+  transform: translateX(8px);
+}
+
+.andy--walking {
+  .andy__arm--left {
+    animation: andyArmLeftWalk 300ms infinite;
+  }
+  .andy__arm--right {
+    animation: andyArmRightWalk 300ms infinite;
+  }
+  .andy__leg--left {
+    animation: andyLegLeftWalk 300ms infinite;
+  }
+  .andy__leg--right {
+    animation: andyLegRightWalk 300ms infinite;
+  }
+}
+
+.andy--headlock {
+  transform: translateZ($floor-depth / 2) translateX(-30px) translateY(-40px) rotateX(0deg) !important;
+
+  .andy__arm--right {
+    transform: translateX(20px) translateZ(48px) rotateZ(-10deg) rotateY(-90deg);
+  }
+}
+
+.andy--suplex {
+  animation: AndySuplex 3s forwards;
+
+  .andy__upper-body {
+    animation: AndySuplexUpperBody 3s forwards;
+  }
+
+  .andy__arm--right {
+    animation: AndySuplexArmRight 3s forwards;
+  }
+}
+
+.andy--pile {
+  transform: translateZ(140px) translateY(-30px) rotateX(180deg) rotateZ(-180deg) !important;
+  animation: AndyPile 1s 2000ms forwards;
+
+  .andy__leg--left {
+    transform: translateX(-8px) rotateY(20deg);
+  }
+
+  .andy__leg--right {
+    transform: translateX(8px) rotateY(-20deg);
+  }
+}

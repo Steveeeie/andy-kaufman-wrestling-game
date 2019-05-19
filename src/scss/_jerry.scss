@@ -1,0 +1,303 @@
+@keyframes jerryArmLeftWalk {
+  0% {
+    transform: translateX(-32px) translateZ(48px) rotateX(20deg);
+  }
+  50% {
+    transform: translateX(-32px) translateZ(48px) rotateX(-20deg);
+  }
+  100% {
+    transform: translateX(-32px) translateZ(48px) rotateX(20deg);
+  }
+}
+
+@keyframes jerryArmRightWalk {
+  0% {
+    transform: translateX(32px) translateZ(48px) rotateX(-20deg);
+  }
+  50% {
+    transform: translateX(32px) translateZ(48px) rotateX(20deg);
+  }
+  100% {
+    transform: translateX(32px) translateZ(48px) rotateX(-20deg);
+  }
+}
+
+@keyframes jerryLegLeftWalk {
+  0% {
+    transform: translateX(-10px) rotateX(-30deg);
+  }
+  50% {
+    transform: translateX(-10px) rotateX(30deg);
+  }
+  100% {
+    transform: translateX(-10px) rotateX(-30deg);
+  }
+}
+
+@keyframes jerryLegRightWalk {
+  0% {
+    transform: translateX(10px) rotateX(30deg);
+  }
+  50% {
+    transform: translateX(10px) rotateX(-30deg);
+  }
+  100% {
+    transform: translateX(10px) rotateX(30deg);
+  }
+}
+
+@keyframes JerrySuplexArmLeft {
+  0% {
+    transform: translateX(-32px) translateZ(48px) rotateX(20deg) rotateY(-20deg);
+  }
+  40% {
+    transform: translateX(-32px) translateZ(48px) rotateX(20deg) rotateY(50deg);
+  }
+  60% {
+    transform: translateX(-32px) translateZ(48px) rotateX(-140deg) rotateY(0deg);
+  }
+  100% {
+    transform: translateX(-32px) translateZ(48px) rotateX(-140deg) rotateY(0deg);
+  }
+}
+
+@keyframes JerrySuplexArmRight {
+  0% {
+    transform: translateX(32px) translateZ(48px) rotateX(20deg) rotateY(20deg);
+  }
+  40% {
+    transform: translateX(32px) translateZ(48px) rotateX(-140deg) rotateY(45deg);
+  }
+  60% {
+    transform: translateX(32px) translateZ(48px) rotateX(-140deg) rotateY(-10deg);
+  }
+  100% {
+    transform: translateX(32px) translateZ(48px) rotateX(-140deg) rotateY(-10deg);
+  }
+}
+
+@keyframes JerrySuplexUpperBody {
+  0% {
+    transform: rotateX(50deg);
+  }
+  40% {
+    transform: rotateX(50deg);
+  }
+  75% {
+    transform: rotateX(-30deg);
+  }
+  100% {
+    transform: rotateX(-30deg);
+  }
+}
+
+@keyframes JerrySuplex {
+  0% {
+    transform: translateZ($floor-depth / 2) rotateX(0deg);
+  }
+  40% {
+    transform: translateZ($floor-depth / 2) rotateX(0deg);
+  }
+  60% {
+    transform: translateZ($floor-depth / 2 - 20px) rotateX(-90deg);
+  }
+  100% {
+    transform: translateZ($floor-depth / 2 - 30px) rotateX(-90deg);
+  }
+}
+
+@keyframes JerryPile {
+  0% {
+    transform: translateZ($floor-depth / 2);
+  }
+  50% {
+    transform: translateZ($floor-depth / 2 + 50px);
+  }
+  80% {
+    transform: translateZ($floor-depth / 2 - 40px);
+  }
+  100% {
+    transform: translateZ($floor-depth / 2 - 35px);
+  }
+}
+
+@keyframes JerryPileLegLeft {
+  0% {
+    transform: translateX(-10px) rotateX(0deg);
+  }
+  40% {
+    transform: translateX(-10px) rotateX(-90deg) rotateY(20deg);
+  }
+  100% {
+    transform: translateX(-10px) rotateX(-90deg) rotateY(20deg);
+  }
+}
+
+@keyframes JerryPileLegRight {
+  0% {
+    transform: translateX(10px) rotateX(0deg);
+  }
+  40% {
+    transform: translateX(10px) rotateX(-90deg) rotateY(-20deg);
+  }
+  100% {
+    transform: translateX(10px) rotateX(-90deg) rotateY(-20deg);
+  }
+}
+
+.jerry {
+  @include pivot;
+  transform: translateZ($floor-depth / 2);
+}
+
+.jerry__upper-body {
+  @include pivot;
+}
+
+.jerry__head {
+  @include box(
+    $pivot-position-z: 'bottom',
+    $depth: 28px,
+    $height: 28px,
+    $width: 28px,
+    $texture: 'jerry-lawler.gif',
+    $texture-position-top: -52px -76px,
+    $texture-position-front: -52px -76px,
+    $texture-position-back: -80px -104px,
+    $texture-position-left: -52px -104px,
+    $texture-position-right: -108px -104px
+  );
+  transform: translateZ(54px);
+  transition: transform 200ms linear;
+}
+
+.jerry__body {
+  @include box(
+    $pivot-position-z: 'top',
+    $depth: 47px,
+    $height: 31px,
+    $width: 52px,
+    $texture: 'jerry-lawler.gif',
+    $texture-position-top: 0 0,
+    $texture-position-front: 0 -80px,
+    $texture-position-back: 0 -33px,
+    $texture-position-left: -52px 0,
+    $texture-position-right: -84px 0
+  );
+  transform: translateZ(52px);
+  transition: transform 200ms linear;
+
+  .face--bottom {
+    background: #c43939;
+  }
+}
+
+.jerry__leg {
+  @include box(
+    $pivot-position-z: 'top',
+    $depth: 52px,
+    $height: 20px,
+    $width: 20px,
+    $texture: 'jerry-lawler.gif',
+    $texture-position-default: -116px -52px,
+    $texture-position-top: -116px -48px,
+    $texture-position-bottom: -76px -48px
+  );
+
+  transition: transform 200ms linear;
+}
+
+.jerry__arm {
+  @include box(
+    $pivot-position-z: 'top',
+    $depth: 52px,
+    $height: 20px,
+    $width: 20px,
+    $texture: 'jerry-lawler.gif',
+    $texture-position-default: -116px 0,
+    $texture-position-top: -52px -48px,
+    $texture-position-bottom: -52px -48px
+  );
+
+  transition: transform 200ms linear;
+}
+
+.jerry__arm--left {
+  transform: translateX(-32px) translateZ(48px);
+}
+
+.jerry__arm--right {
+  transform: translateX(32px) translateZ(48px);
+}
+
+.jerry__leg--left {
+  transform: translateX(-10px);
+}
+
+.jerry__leg--right {
+  transform: translateX(10px);
+}
+
+.jerry--walking {
+  .jerry__arm--left {
+    animation: jerryArmLeftWalk 300ms infinite;
+  }
+  .jerry__arm--right {
+    animation: jerryArmRightWalk 300ms infinite;
+  }
+  .jerry__leg--left {
+    animation: jerryLegLeftWalk 300ms infinite;
+  }
+  .jerry__leg--right {
+    animation: jerryLegRightWalk 300ms infinite;
+  }
+}
+
+.jerry--headlock {
+  .jerry__upper-body {
+    transform: rotateX(50deg);
+  }
+  .jerry__arm--left {
+    transform: translateX(-32px) translateZ(48px) rotateX(20deg) rotateY(-20deg);
+  }
+  .jerry__arm--right {
+    transform: translateX(32px) translateZ(48px) rotateX(20deg) rotateY(20deg);
+  }
+}
+
+.jerry--suplex {
+  animation: JerrySuplex 3s forwards;
+
+  .jerry__upper-body {
+    animation: JerrySuplexUpperBody 3s forwards;
+  }
+
+  .jerry__arm--left {
+    animation: JerrySuplexArmLeft 3s forwards;
+  }
+
+  .jerry__arm--right {
+    animation: JerrySuplexArmRight 3s forwards;
+  }
+}
+
+.jerry--pile {
+  transform: translateZ($floor-depth / 2) !important;
+  animation: JerryPile 1s 2000ms forwards;
+
+  .jerry__arm--left {
+    transform: translateX(-32px) translateZ(48px) rotateY(-30deg) rotateX(-90deg);
+  }
+
+  .jerry__arm--right {
+    transform: translateX(32px) translateZ(48px) rotateY(30deg) rotateX(-90deg);
+  }
+
+  .jerry__leg--left {
+    animation: JerryPileLegLeft 1s 2000ms forwards;
+  }
+
+  .jerry__leg--right {
+    animation: JerryPileLegRight 1s 2000ms forwards;
+  }
+}

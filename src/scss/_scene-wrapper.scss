@@ -1,0 +1,7 @@
+.scene-wrapper {
+  @include pivot;
+  transform: translateY(-50%) translateX(-50%) scale(0.8);
+  height: 100%;
+  width: 100%;
+  perspective: 3000;
+}

@@ -1,0 +1,12 @@
+@mixin face($texture, $texture-position, $height, $width) {
+  backface-visibility: hidden;
+  background-image: url('../textures/'+$texture);
+  background-position: $texture-position;
+  height: $height;
+  position: absolute;
+  transform-style: preserve-3d;
+  width: $width;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
+}

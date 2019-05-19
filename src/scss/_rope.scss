@@ -1,0 +1,35 @@
+.rope {
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+}
+
+.rope--bottom {
+  @include face(
+    $texture: 'ropes-blue.gif',
+    $texture-position: 0,
+    $height: $floor-size + 16px,
+    $width: $floor-size + 16px
+  );
+  transform: translate3d(-50%, -50%, $rope-gap);
+}
+
+.rope--middle {
+  @include face(
+    $texture: 'ropes-white.gif',
+    $texture-position: 0,
+    $height: $floor-size + 16px,
+    $width: $floor-size + 16px
+  );
+  transform: translate3d(-50%, -50%, $rope-gap * 2.5);
+}
+
+.rope--top {
+  @include face(
+    $texture: 'ropes-red.gif',
+    $texture-position: 0,
+    $height: $floor-size + 16px,
+    $width: $floor-size + 16px
+  );
+  transform: translate3d(-50%, -50%, $rope-gap * 4);
+}

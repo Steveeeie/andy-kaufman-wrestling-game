@@ -1,0 +1,57 @@
+@keyframes SceneSuplex {
+  0% {
+    transform: translateX(0) rotateX(45deg) rotateZ(225deg);
+  }
+  60% {
+    transform: translateX(0) rotateX(45deg) rotateZ(225deg);
+  }
+  64% {
+    transform: translateX(-5px) rotateX(45deg) rotateZ(225deg);
+  }
+  68% {
+    transform: translateX(5px) rotateX(45deg) rotateZ(225deg);
+  }
+  72% {
+    transform: translateX(-5px) rotateX(45deg) rotateZ(225deg);
+  }
+  100% {
+    transform: translateX(0) rotateX(45deg) rotateZ(225deg);
+  }
+}
+
+@keyframes SceneSpin {
+  0% {
+    transform: translateY(40px) rotateX(45deg) rotateZ(-135deg);
+  }
+  100% {
+    transform: translateY(40px) rotateX(45deg) rotateZ(225deg);
+  }
+}
+
+.scene {
+  @include pivot;
+  transform: rotateX(45deg) rotateZ(225deg);
+  transition: transform 1000ms linear;
+}
+
+.scene--start {
+  animation: SceneSpin 90s infinite linear;
+}
+
+.scene--focus-jerry {
+  transform: translateY(190px) rotateX(45deg) rotateZ(225deg);
+  transition: none;
+}
+
+.scene--focus-andy {
+  transform: translateY(-80px) rotateX(45deg) rotateZ(225deg);
+  transition: none;
+}
+
+.scene--suplex {
+  animation: SceneSuplex 3s forwards;
+}
+
+.scene--pile {
+  animation: SceneSuplex 1s 2000ms forwards;
+}

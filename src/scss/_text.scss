@@ -1,0 +1,29 @@
+.text-overlay {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  color: #fff;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  padding: 32px;
+  transition: opacity 300ms linear;
+  transform: translate3d(-50%, -50%, 1100px);
+  line-height: 1.6;
+  width: 100%;
+  max-width: 720px;
+  z-index: 1;
+}
+
+.text-overlay--bottom {
+  font-size: 0.9rem;
+  top: inherit;
+  transform: translate3d(-50%, 0, 1100px);
+  padding-bottom: 64px;
+  bottom: 0;
+}
+
+.text-overlay--hide {
+  opacity: 0;
+}

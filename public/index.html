@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Andy Kaufman's Gone Wrestling</title>
+    <meta
+      description='Control Andy Kaufman the intergender wrestling champion of the world
+      during his infamous wrestling match on 5th April 1982 in Memphis, Tennessee as he attempts to
+      defeat his first male opponent, the southern heavyweight champion Jerry "The King"
+      Lawler.'
+    />
+    >
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <button id="button" class="button">Start</button>
+
+    <div class="background"></div>
+
+    <div
+      id="background-circle-overlay"
+      class="background-circle-overlay background-circle-overlay--hide"
+    ></div>
+
+    <div id="background-overlay" class="background-overlay background-overlay--clear"></div>
+
+    <div id="text-overlay" class="text-overlay text-overlay--hide"></div>
+
+    <div class="scene-wrapper">
+      <div id="scene" class="scene scene--start">
+        <div class="ring">
+          <div class="floor">
+            <div class="face face--top"></div>
+            <div class="face face--front"></div>
+            <div class="face face--back"></div>
+            <div class="face face--left"></div>
+            <div class="face face--right"></div>
+          </div>
+
+          <div class="rope rope--top"></div>
+          <div class="rope rope--middle"></div>
+          <div class="rope rope--bottom"></div>
+
+          <div class="post post--top-left">
+            <div class="face face--top"></div>
+            <div class="face face--front"></div>
+            <div class="face face--back"></div>
+            <div class="face face--left"></div>
+            <div class="face face--right"></div>
+          </div>
+
+          <div class="post post--top-right">
+            <div class="face face--top"></div>
+            <div class="face face--front"></div>
+            <div class="face face--back"></div>
+            <div class="face face--left"></div>
+            <div class="face face--right"></div>
+          </div>
+
+          <div class="post post--bottom-left">
+            <div class="face face--top"></div>
+            <div class="face face--bottom"></div>
+            <div class="face face--front"></div>
+            <div class="face face--back"></div>
+            <div class="face face--left"></div>
+            <div class="face face--right"></div>
+          </div>
+
+          <div class="post post--bottom-right">
+            <div class="face face--top"></div>
+            <div class="face face--bottom"></div>
+            <div class="face face--front"></div>
+            <div class="face face--back"></div>
+            <div class="face face--left"></div>
+            <div class="face face--right"></div>
+          </div>
+
+          <div id="andy" class="andy">
+            <div id="andy-speech" class="speech"></div>
+            <div class="andy__upper-body">
+              <div class="andy__head">
+                <div class="face face--top"></div>
+                <div class="face face--bottom"></div>
+                <div class="face face--front"></div>
+                <div class="face face--back"></div>
+                <div class="face face--left"></div>
+                <div class="face face--right"></div>
+              </div>
+              <div class="andy__body">
+                <div class="face face--top"></div>
+                <div class="face face--bottom"></div>
+                <div class="face face--front"></div>
+                <div class="face face--back"></div>
+                <div class="face face--left"></div>
+                <div class="face face--right"></div>
+              </div>
+              <div class="andy__arm andy__arm--left">
+                <div class="face face--top"></div>
+                <div class="face face--bottom"></div>
+                <div class="face face--front"></div>
+                <div class="face face--back"></div>
+                <div class="face face--left"></div>
+                <div class="face face--right"></div>
+              </div>
+              <div class="andy__arm andy__arm--right">
+                <div class="face face--top"></div>
+                <div class="face face--bottom"></div>
+                <div class="face face--front"></div>
+                <div class="face face--back"></div>
+                <div class="face face--left"></div>
+                <div class="face face--right"></div>
+              </div>
+            </div>
+            <div class="andy__leg andy__leg--left">
+              <div class="face face--top"></div>
+              <div class="face face--bottom"></div>
+              <div class="face face--front"></div>
+              <div class="face face--back"></div>
+              <div class="face face--left"></div>
+              <div class="face face--right"></div>
+            </div>
+            <div class="andy__leg andy__leg--right">
+              <div class="face face--top"></div>
+              <div class="face face--bottom"></div>
+              <div class="face face--front"></div>
+              <div class="face face--back"></div>
+              <div class="face face--left"></div>
+              <div class="face face--right"></div>
+            </div>
+          </div>
+
+          <div id="jerry" class="jerry">
+            <div id="jerry-speech" class="speech"></div>
+            <div class="jerry__upper-body">
+              <div class="jerry__head">
+                <div class="face face--top"></div>
+                <div class="face face--bottom"></div>
+                <div class="face face--front"></div>
+                <div class="face face--back"></div>
+                <div class="face face--left"></div>
+                <div class="face face--right"></div>
+              </div>
+              <div class="jerry__body">
+                <div class="face face--top"></div>
+                <div class="face face--bottom"></div>
+                <div class="face face--front"></div>
+                <div class="face face--back"></div>
+                <div class="face face--left"></div>
+                <div class="face face--right"></div>
+              </div>
+              <div class="jerry__arm jerry__arm--left">
+                <div class="face face--top"></div>
+                <div class="face face--bottom"></div>
+                <div class="face face--front"></div>
+                <div class="face face--back"></div>
+                <div class="face face--left"></div>
+                <div class="face face--right"></div>
+              </div>
+              <div class="jerry__arm jerry__arm--right">
+                <div class="face face--top"></div>
+                <div class="face face--bottom"></div>
+                <div class="face face--front"></div>
+                <div class="face face--back"></div>
+                <div class="face face--left"></div>
+                <div class="face face--right"></div>
+              </div>
+            </div>
+            <div class="jerry__leg jerry__leg--left">
+              <div class="face face--top"></div>
+              <div class="face face--bottom"></div>
+              <div class="face face--front"></div>
+              <div class="face face--back"></div>
+              <div class="face face--left"></div>
+              <div class="face face--right"></div>
+            </div>
+            <div class="jerry__leg jerry__leg--right">
+              <div class="face face--top"></div>
+              <div class="face face--bottom"></div>
+              <div class="face face--front"></div>
+              <div class="face face--back"></div>
+              <div class="face face--left"></div>
+              <div class="face face--right"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="guest" class="guest"></div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+.floor {
+  @include box(
+    $pivot-position-z: 'top',
+    $depth: $floor-depth,
+    $height: $floor-size,
+    $width: $floor-size,
+    $texture: 'ring-floor.gif',
+    $texture-position-default: 0 -640px,
+    $texture-position-top: 0 0
+  );
+}

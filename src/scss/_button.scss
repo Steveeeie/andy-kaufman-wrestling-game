@@ -1,0 +1,35 @@
+.button {
+  background-color: transparent;
+  background-image: url('../textures/button-background.svg');
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 0;
+  font-family: inherit;
+  color: #fff;
+  cursor: pointer;
+  left: 50%;
+  outline: none;
+  position: fixed;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 1200px);
+  z-index: 3;
+  height: 56px;
+  width: 157px;
+  font-size: 0.9rem;
+  transform-origin: top left;
+  transition: background-size 120ms linear, opacity 100ms linear;
+
+  &:hover {
+    background-size: 100%;
+  }
+
+  &:active {
+    background-size: 95%;
+  }
+}
+
+.button--hide {
+  opacity: 0;
+  pointer-events: none;
+}

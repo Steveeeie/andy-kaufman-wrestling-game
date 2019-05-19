@@ -1,0 +1,102 @@
+@mixin box(
+  $depth: 128px,
+  $height: 128px,
+  $pivot-position-x: 'center',
+  $pivot-position-y: 'center',
+  $pivot-position-z: 'center',
+  $texture: 'andy-kaufman.gif',
+  $texture-position-default: 0 0,
+  $texture-position-top: $texture-position-default,
+  $texture-position-bottom: $texture-position-default,
+  $texture-position-left: $texture-position-default,
+  $texture-position-right: $texture-position-default,
+  $texture-position-front: $texture-position-default,
+  $texture-position-back: $texture-position-default,
+  $width: 128px,
+  $top-x: 0,
+  $bottom-x: 0,
+  $sides-x: 0,
+  $top-y: 0,
+  $bottom-y: 0,
+  $sides-y: 0,
+  $top-z: 0,
+  $bottom-z: 0,
+  $sides-z: 0
+) {
+  @if ($pivot-position-z == 'top') {
+    $top-z: 0;
+    $bottom-z: -$depth;
+    $sides-z: -$depth / 2;
+  } @else if($pivot-position-z == 'center') {
+    $top-z: $depth / 2;
+    $bottom-z: -$depth / 2;
+    $sides-z: 0;
+  } @else {
+    $top-z: $depth;
+    $bottom-z: 0;
+    $sides-z: $depth / 2;
+  }
+
+  @if ($pivot-position-y == 'top') {
+    $top-y: 0;
+    $bottom-y: 0;
+    $sides-y: calc(-50% + #{$height / 2});
+  } @else if($pivot-position-y == 'center') {
+    $top-y: -50%;
+    $bottom-y: -50%;
+    $sides-y: -50%;
+  } @else {
+    $top-y: -$height;
+    $bottom-y: -$height;
+    $sides-y: calc(-50% - #{$height / 2});
+  }
+
+  @if ($pivot-position-x == 'left') {
+    $top-x: 0;
+    $bottom-x: 0;
+    $sides-x: calc(-50% + #{$width / 2});
+  } @else if($pivot-position-x == 'center') {
+    $top-x: -50%;
+    $bottom-x: -50%;
+    $sides-x: -50%;
+  } @else {
+    $top-x: -$width;
+    $bottom-x: -$width;
+    $sides-x: calc(-50% - #{$width / 2});
+  }
+
+  @include pivot;
+
+  .face--top {
+    @include face($texture, $texture-position-top, $height, $width);
+    transform: translate3d($top-x, $top-y, $top-z);
+  }
+
+  .face--bottom {
+    @include face($texture, $texture-position-bottom, $height, $width);
+    transform: translate3d($bottom-x, $bottom-y, $bottom-z) rotateX(180deg);
+  }
+
+  .face--front {
+    @include face($texture, $texture-position-front, $depth, $width);
+    transform: translate3d($sides-x, $sides-y, $sides-z) translateY($height / 2) rotateX(270deg);
+  }
+
+  .face--back {
+    @include face($texture, $texture-position-back, $depth, $width);
+    transform: translate3d($sides-x, $sides-y, $sides-z) translateY(-$height / 2) rotateX(270deg)
+      rotateY(180deg);
+  }
+
+  .face--left {
+    @include face($texture, $texture-position-left, $depth, $height);
+    transform: translate3d($sides-x, $sides-y, $sides-z) translateX($width / 2) rotateX(270deg)
+      rotateY(90deg);
+  }
+
+  .face--right {
+    @include face($texture, $texture-position-right, $depth, $height);
+    transform: translate3d($sides-x, $sides-y, $sides-z) translateX(-$width / 2) rotateX(270deg)
+      rotateY(270deg);
+  }
+}
