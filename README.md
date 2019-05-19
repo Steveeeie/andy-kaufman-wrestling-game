@@ -2,7 +2,9 @@
 
 ## Demo
 
-[Play Demo](https://stevemeredith.com/andy-kaufman-wrestling-game)
+[Play Now](https://stevemeredith.com/andy-kaufman-wrestling-game)
+
+[CodePen](https://codepen.io/steveeeie/details/yWbPPO)
 
 ## Description
 
